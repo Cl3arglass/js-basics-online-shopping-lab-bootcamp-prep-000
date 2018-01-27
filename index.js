@@ -81,11 +81,11 @@ if(result.length === 0) {
 //       returned by `total()` and `83296759` is the credit card number passed to `placeOrder()`).
 //       Then, it should empty the `cart` array.
 function placeOrder(cardNumber) {
-  var num = cardNumber
+
   if(arguments.length === 0){
     console.log(`Sorry, we don't have a credit card on file for you.`)
   } else {
-    console.log(`Your total cost is $${total()}, which will be charged to the ${num}.`)
-    cart = [];
+    console.log(`Your total cost is $${total()}, which will be charged to the ${cardNumber}.`)
   }
+  cart.splice(0,cart.length);
 }
