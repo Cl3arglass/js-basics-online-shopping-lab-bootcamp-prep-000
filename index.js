@@ -66,7 +66,11 @@ for (var i = 0; i < cart.length; i ++) {
    result = cart.splice(cart.indexOf(cart[i]), 1);
  }
 }
-return result.length === 0 ? `That item is not in your cart.`: cart;
+if(result.length === 0) {
+  console.log(`That item is not in your cart.`)
+} else {
+  return cart;
+}
 }
 
 function placeOrder(cardNumber) {
