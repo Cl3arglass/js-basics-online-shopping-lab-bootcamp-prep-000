@@ -60,17 +60,13 @@ function total() {
 //     then remove it if it matches. You might find [hasOwnProperty](https://developer.mozilla.org/en-US/do
 //       cs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) to be useful.
 function removeFromCart(item) {
-  for (var i = 0; i < cart.length; i ++) {
-    if (cart[i].hasOwnProperty(item)) {
-      cart.splice(cart.indexOf(cart[i]), 1);
-
-
-    } else {
-      console.log(`That item is not in your cart.`)
-
-    }
-  }
-  return cart;
+  var result = '';
+for (var i = 0; i < cart.length; i ++) {
+ if (cart[i].hasOwnProperty(item)) {
+   result = cart.splice(cart.indexOf(cart[i]), 1);
+ }
+}
+return result.length === 0 ? `That item is not in your cart.`: cart;
 }
 
 function placeOrder(cardNumber) {
